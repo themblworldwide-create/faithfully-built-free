@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faithfully Built</title>
+<meta name="description" content="Faithfully Built: How God Rebuilds Your Life From the Ground Up. The new book by Isaiah Lee.">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://faithfullybuiltlife.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%230E0B0A'/%3E%3Cpath d='M4 11 12 4l8 7v9H4z' fill='none' stroke='%23A32626' stroke-width='1.8'/%3E%3Crect x='10' y='14' width='4' height='6' fill='%23A32626'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://faithfullybuiltlife.com/">
+<meta property="og:title" content="Faithfully Built by Isaiah Lee">
+<meta property="og:description" content="You are not abandoned. You are under construction. How God rebuilds your life from the ground up.">
+<meta property="og:image" content="https://faithfullybuiltlife.com/assets/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Layout idea: walk through a house as it's built. Night-black page, ivory type,
+     the cover's red as the only accent. Each section is a numbered room. */
+  --night:#000000;
+  --night-2:#0D0B0A;
+  --ivory:#F3ECE1;
+  --red:#A32626;
+  --red-soft:#D98A7E;
+  --muted:rgba(243,236,225,.58);
+  --line:rgba(243,236,225,.14);
+  --f-caps:"Cinzel","Trajan Pro",Georgia,serif;
+  --f-display:"Cormorant Garamond",Garamond,Georgia,serif;
+  --f-body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --gut:clamp(18px,4vw,48px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--ivory);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--red-soft);outline-offset:3px}
+h1,h2,h3{font-weight:400;text-wrap:balance}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--gut)}
+.num{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red-soft)}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:16px;top:16px;z-index:99;background:var(--ivory);color:var(--night);padding:10px 14px}
+
+/* pills */
+.pill{display:inline-flex;align-items:center;gap:12px;padding:15px 28px;border-radius:999px;font-family:var(--f-caps);
+  font-size:12px;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ivory);transition:background .3s,color .3s,gap .3s}
+.pill.solid{background:var(--red);border-color:var(--red);color:var(--ivory)}
+.pill.solid:hover{background:#7E1B1B;gap:18px}
+.pill.ghost{color:var(--ivory)}
+.pill.ghost:hover{background:var(--ivory);color:var(--night)}
+.txt{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:3px}
+.txt:hover{color:var(--ivory);border-color:var(--ivory)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.mark{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--f-caps);font-size:13px;letter-spacing:.3em;text-transform:uppercase}
+.mark svg{width:22px;height:22px}
+.rooms{display:flex;gap:30px;list-style:none}
+.rooms a{text-decoration:none;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.rooms a b{color:var(--red-soft);font-weight:400;margin-right:6px}
+.rooms a:hover{color:var(--ivory)}
+.nav .pill{padding:10px 18px;font-size:10.5px}
+@media(max-width:900px){.rooms{display:none}}
+
+/* hero */
+.hero{text-align:center;padding:clamp(70px,10vw,140px) 0 clamp(50px,6vw,80px)}
+.hero .kicker{font-family:var(--f-caps);letter-spacing:.42em;font-size:13px;text-transform:uppercase;color:var(--muted)}
+.hero h1{margin:26px 0 10px;line-height:.88}
+.hero h1 .a{display:block;font-family:var(--f-display);font-style:italic;font-size:clamp(52px,8vw,118px)}
+.hero h1 .b{display:block;font-family:var(--f-caps);font-weight:500;font-size:clamp(78px,13vw,200px);letter-spacing:.06em;color:var(--red)}
+.hero .sub{font-family:var(--f-display);font-size:clamp(22px,2.4vw,30px);color:var(--muted)}
+.hero .ctas{margin-top:40px;display:flex;justify-content:center;align-items:center;gap:28px;flex-wrap:wrap}
+
+/* full-width divider: the book */
+.field{background:var(--ivory);color:var(--night);padding:clamp(60px,8vw,110px) var(--gut);display:grid;place-items:center;position:relative;overflow:hidden}
+.field::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(163,38,38,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(163,38,38,.1) 1px,transparent 1px);background-size:64px 64px}
+.field img{position:relative;mix-blend-mode:multiply;width:min(440px,78vw);height:auto}
+.field figcaption{position:relative;margin-top:22px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+
+/* full-width photo */
+.photo-full{position:relative;margin:0;overflow:hidden}
+.photo-full img{width:100%;height:auto;aspect-ratio:1800/1007;object-fit:cover;display:block}
+.photo-full::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 30%,transparent 60%,rgba(0,0,0,.85))}
+.photo-full figcaption{position:absolute;z-index:1;left:var(--gut);right:var(--gut);bottom:clamp(20px,4vw,48px);display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.photo-full .line{font-family:var(--f-display);font-style:italic;font-size:clamp(28px,4vw,56px);line-height:1.05;color:var(--ivory)}
+.photo-full .line em{color:var(--red-soft)}
+.photo-full .num{margin-bottom:12px;color:var(--ivory);opacity:.85}
+.photo-full .links{display:flex;gap:24px;flex-wrap:wrap}
+.photo-full .txt{color:var(--ivory);border-color:rgba(243,236,225,.4)}
+.photo-full .cap{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,236,225,.75)}
+
+/* room header */
+.room-h{padding:clamp(90px,11vw,150px) 0 clamp(40px,5vw,64px)}
+.room-h h2{font-family:var(--f-display);font-size:clamp(46px,6vw,86px);line-height:1;margin-top:16px}
+.room-h h2 em{color:var(--red-soft)}
+.room-h p{margin-top:16px;color:var(--muted);font-size:18px;max-width:520px}
+
+/* the build (scroll story) */
+.build{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px)}
+.stage{position:sticky;top:110px;height:min(72vh,600px);display:grid;place-items:center;border:1px solid var(--line);border-radius:4px;background:
+  radial-gradient(120% 80% at 50% 100%,rgba(163,38,38,.12),transparent 60%),var(--night-2)}
+.stage svg{width:88%;height:auto;overflow:visible}
+.stage .plate{position:absolute;left:18px;right:18px;bottom:14px;display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.stage .plate b{color:var(--red-soft);font-weight:400}
+.steps{list-style:none}
+.step{min-height:68vh;display:flex;flex-direction:column;justify-content:center;padding:40px 0;border-top:1px solid var(--line);opacity:.3;transition:opacity .35s}
+.step:first-child{border-top:0}
+.step.on{opacity:1}
+.step h3{font-family:var(--f-display);font-size:clamp(40px,4.4vw,62px);line-height:1;margin:14px 0 16px}
+.step p{font-size:19px;color:var(--muted);max-width:420px}
+.step p strong{color:var(--ivory);font-weight:500}
+
+/* house drawing states */
+#house .bp{stroke:rgba(243,236,225,.28);stroke-width:1;stroke-dasharray:4 5;fill:none}
+#house .ground{stroke:var(--ivory);stroke-width:1.2}
+#house .soil{stroke:rgba(243,236,225,.25);stroke-width:1}
+#house g.ph{opacity:0;transition:opacity .5s ease,transform .5s ease}
+#house g.ph2{transform:translateY(10px)}
+#house g.ph3{transform:translateY(-14px)}
+#house[data-phase="1"] .ph1,
+#house[data-phase="2"] .ph1,#house[data-phase="2"] .ph2,
+#house[data-phase="3"] .ph1,#house[data-phase="3"] .ph2,#house[data-phase="3"] .ph3,
+#house[data-phase="4"] .ph1,#house[data-phase="4"] .ph2,#house[data-phase="4"] .ph3,#house[data-phase="4"] .ph4,
+#house[data-phase="5"] .ph1,#house[data-phase="5"] .ph2,#house[data-phase="5"] .ph3,#house[data-phase="5"] .ph5{opacity:1;transform:none}
+#house .frame line{stroke:var(--red-soft);stroke-width:1.4}
+#house .rain line{stroke:rgba(243,236,225,.35);stroke-width:1;animation:rain 1.1s linear infinite}
+#house .rain line:nth-child(2n){animation-delay:-.4s}
+#house .rain line:nth-child(3n){animation-delay:-.8s}
+@keyframes rain{from{transform:translate(0,-30px)}to{transform:translate(-14px,40px)}}
+#house .glow{fill:#F2C27B}
+#house .halo{fill:url(#halo)}
+
+@media(max-width:900px){
+  .build{grid-template-columns:1fr}
+  .stage{top:70px;height:44vh;z-index:2}
+  .step{min-height:60vh}
+}
+
+/* house photo divider */
+.drawing{background:var(--ivory);padding:clamp(50px,7vw,90px) var(--gut);display:grid;place-items:center;margin-top:clamp(80px,10vw,140px)}
+.drawing .split{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(30px,6vw,90px);align-items:center;max-width:1000px;width:100%}
+.drawing img{mix-blend-mode:multiply;width:min(340px,100%);height:auto}
+.drawing .pill{margin-top:30px}
+@media(max-width:760px){.drawing .split{grid-template-columns:1fr;justify-items:center;text-align:center}.drawing img{width:min(260px,70vw)}}
+.drawing p{margin-top:16px;font-family:var(--f-display);font-style:italic;font-size:clamp(34px,4.4vw,60px);line-height:1.1;color:var(--night)}
+.drawing p em{color:var(--red)}
+
+/* book */
+.book{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,80px);align-items:center;padding-top:clamp(90px,11vw,150px)}
+.book-cover{background:var(--ivory);border-radius:3px;display:grid;place-items:center;padding:clamp(28px,4vw,48px);position:relative;overflow:hidden}
+.book-cover::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(163,38,38,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(163,38,38,.1) 1px,transparent 1px);background-size:40px 40px}
+.book-cover img{position:relative;mix-blend-mode:multiply;width:min(300px,100%);height:auto}
+.book h2{font-family:var(--f-display);font-size:clamp(42px,5vw,72px);line-height:1;margin:16px 0 14px}
+.book h2 em{color:var(--red-soft)}
+.book .themes{color:var(--muted);font-size:16px}
+.eds{display:grid;grid-template-columns:repeat(2,1fr);margin-top:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.eds a{display:flex;flex-direction:column;gap:6px;padding:24px 20px;text-decoration:none;border-right:1px solid var(--line);transition:background .3s}
+.eds a:first-child{padding-left:0}
+.eds a:last-child{border-right:0}
+.eds a:hover{background:rgba(243,236,225,.04)}
+.eds .t{font-family:var(--f-display);font-size:clamp(22px,2vw,28px);line-height:1.1}
+.eds .m{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.eds .m.hot{color:var(--red-soft)}
+.eds .go{margin-top:auto;padding-top:12px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
+.eds a:hover .go{color:var(--red-soft)}
+.book .ctas{margin-top:32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+@media(max-width:900px){.book{grid-template-columns:1fr}.book-cover img{width:min(240px,70%)}}
+@media(max-width:560px){.eds{grid-template-columns:1fr}.eds a,.eds a:first-child{padding:18px 0;border-right:0;border-bottom:1px solid var(--line)}.eds a:last-child{border-bottom:0}}
+
+/* author */
+.author{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:clamp(30px,5vw,70px);align-items:end;border-top:1px solid var(--line);padding-top:48px}
+.author .portrait-img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:3px}
+.author .mono-mark{font-family:var(--f-caps);font-size:clamp(90px,12vw,170px);line-height:.8;color:var(--red)}
+.author h3{font-family:var(--f-display);font-size:clamp(34px,3.6vw,50px);font-style:italic;line-height:1.1}
+.author .roles{margin:14px 0 26px;font-family:var(--f-caps);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
+.author .links{display:flex;gap:26px;flex-wrap:wrap}
+@media(max-width:700px){.author{grid-template-columns:1fr}}
+
+/* keys */
+.keys{margin-top:clamp(90px,11vw,150px);background:var(--red);text-align:center;padding:clamp(80px,10vw,140px) var(--gut)}
+.keys .num{color:rgba(243,236,225,.7)}
+.keys h2{font-family:var(--f-display);font-size:clamp(46px,6.4vw,92px);line-height:1;margin:16px 0 14px}
+.keys p{color:rgba(243,236,225,.8);font-size:18px}
+.keys .pill{margin-top:36px;background:var(--ivory);color:var(--red);border-color:var(--ivory)}
+.keys .pill:hover{background:transparent;color:var(--ivory)}
+.keys svg{width:34px;height:34px;margin:0 auto 10px;display:block}
+
+/* readers */
+.readers{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:20px;align-items:stretch;border-top:1px solid var(--line);padding-top:36px}
+.quotes{display:flex;flex-direction:column;gap:20px}
+.quote{flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:22px;padding:30px;border:1px solid var(--line);border-radius:3px;background:var(--night-2)}
+.stars{color:var(--red-soft);letter-spacing:.3em;font-size:14px}
+.quote blockquote{font-family:var(--f-display);font-size:clamp(23px,2vw,30px);line-height:1.2;margin-top:14px}
+.quote blockquote em{color:var(--red-soft)}
+.who{display:flex;align-items:center;gap:14px}
+.who img{width:46px;height:46px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
+.who b{display:block;font-weight:500;font-size:15px}
+.who span{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.photos-cell{position:relative;display:flex;margin:0;border-radius:3px;overflow:hidden}
+.photos-cell img{flex:1;width:100%;height:100%;min-height:320px;object-fit:cover;object-position:50% 40%;border-radius:3px}
+.photos-cell figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;background:linear-gradient(transparent,rgba(14,11,10,.75));color:var(--ivory)!important;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:900px){.readers{grid-template-columns:1fr 1fr}.quotes{grid-column:1 / -1}.photos-cell img{aspect-ratio:4/5;height:auto;min-height:0}}
+
+/* footer */
+footer{padding:60px 0 40px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+footer .verse{font-family:var(--f-display);font-style:italic;font-size:20px;color:var(--muted);max-width:520px}
+footer .small{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#build">Skip to the house</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3l9 8v10H3z" fill="none" stroke="#A32626" stroke-width="1.6"/><rect x="10" y="14" width="4" height="7" fill="#A32626"/></svg>
+      Faithfully Built
+    </a>
+    <ul class="rooms">
+      <li><a href="#author"><b>01</b>The Author</a></li>
+      <li><a href="#build"><b>02</b>The Build</a></li>
+      <li><a href="#readers"><b>03</b>Readers</a></li>
+      <li><a href="#book"><b>04</b>The Book</a></li>
+      <li><a href="#keys"><b>05</b>The Keys</a></li>
+    </ul>
+    <!-- Replace with checkout link -->
+    <a class="pill solid" href="https://buy.stripe.com/8x200jg8n3v84j1eiKe3e01">Order</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Isaiah Lee</div>
+    <h1><span class="a">Faithfully</span><span class="b">Built</span></h1>
+    <p class="sub">How God rebuilds your life from the ground up.</p>
+    <div class="ctas">
+      <a class="pill solid" href="https://buy.stripe.com/8x200jg8n3v84j1eiKe3e01">Order the book <span>→</span></a>
+      <a class="txt" href="#build">Walk the house ↓</a>
+    </div>
+  </div>
+</section>
+
+<figure class="photo-full" id="author">
+  <img src="fb-assets/isaiah-wide.webp" alt="Isaiah Lee leaning against a wall, looking off to the side" width="1800" height="1007">
+  <figcaption>
+    <div>
+      <div class="num">01 — The Author</div>
+      <span class="line">Isaiah Lee. <em>Keep building,<br>no matter what.</em></span>
+      <div class="cap" style="margin-top:12px">Artist · Author · Speaker</div>
+    </div>
+    <div class="links">
+      <a class="txt" href="https://iamisaiahlee.com/">Book Isaiah ↗</a>
+      <a class="txt" href="https://open.spotify.com/artist/4QjV4V9vGyIsmt9CRenwfI">Spotify ↗</a>
+      <a class="txt" href="https://www.youtube.com/@iamisaiahlee">YouTube ↗</a>
+    </div>
+  </figcaption>
+</figure>
+
+<!-- 01 THE BUILD -->
+<section id="build">
+  <div class="wrap">
+    <div class="room-h">
+      <div class="num">02 — The Build</div>
+      <h2>Every life is a house. <em>Walk through yours.</em></h2>
+    </div>
+
+    <div class="build">
+      <div class="stage" aria-hidden="true">
+        <svg id="house" viewBox="0 0 400 340" data-phase="1">
+          <defs>
+            <radialGradient id="halo" cx="50%" cy="60%" r="50%"><stop offset="0" stop-color="#F2C27B" stop-opacity=".35"/><stop offset="1" stop-color="#F2C27B" stop-opacity="0"/></radialGradient>
+          </defs>
+          <!-- lights glow (phase 5) -->
+          <g class="ph ph5"><ellipse class="halo" cx="200" cy="230" rx="190" ry="120"/></g>
+
+          <!-- blueprint outline: always visible -->
+          <g class="bp">
+            <path d="M110 285 V150 L200 78 L290 150 V285"/>
+            <path d="M290 200 H345 V285 M290 200 L318 182 L345 200"/>
+            <rect x="135" y="172" width="34" height="40"/><rect x="231" y="172" width="34" height="40"/>
+            <rect x="185" y="232" width="30" height="53"/>
+            <rect x="135" y="232" width="34" height="38"/><rect x="231" y="232" width="34" height="38"/>
+          </g>
+
+          <!-- ground: always visible -->
+          <line class="ground" x1="20" y1="300" x2="380" y2="300"/>
+          <g class="soil">
+            <line x1="40" y1="308" x2="52" y2="300"/><line x1="90" y1="310" x2="104" y2="300"/><line x1="150" y1="309" x2="162" y2="300"/>
+            <line x1="220" y1="310" x2="234" y2="300"/><line x1="280" y1="308" x2="292" y2="300"/><line x1="340" y1="310" x2="354" y2="300"/>
+          </g>
+
+          <!-- phase 1: foundation -->
+          <g class="ph ph1">
+            <rect x="100" y="285" width="255" height="15" fill="#A32626"/>
+            <line x1="100" y1="292" x2="355" y2="292" stroke="#0E0B0A" stroke-width="1"/>
+          </g>
+
+          <!-- phase 2: frame -->
+          <g class="ph ph2 frame">
+            <line x1="110" y1="285" x2="110" y2="150"/><line x1="290" y1="285" x2="290" y2="150"/>
+            <line x1="140" y1="285" x2="140" y2="150"/><line x1="170" y1="285" x2="170" y2="150"/>
+            <line x1="200" y1="285" x2="200" y2="150"/><line x1="230" y1="285" x2="230" y2="150"/><line x1="260" y1="285" x2="260" y2="150"/>
+            <line x1="110" y1="150" x2="290" y2="150"/><line x1="110" y1="218" x2="290" y2="218"/>
+            <line x1="110" y1="150" x2="200" y2="78"/><line x1="290" y1="150" x2="200" y2="78"/><line x1="200" y1="78" x2="200" y2="150"/>
+            <line x1="155" y1="114" x2="155" y2="150"/><line x1="245" y1="114" x2="245" y2="150"/>
+            <line x1="345" y1="285" x2="345" y2="200"/><line x1="318" y1="285" x2="318" y2="190"/><line x1="290" y1="200" x2="345" y2="200"/>
+          </g>
+
+          <!-- phase 3+: walls and roof -->
+          <g class="ph ph3 ph4 ph5">
+            <path d="M290 200 H345 V285 H290Z" fill="#E7DDCD"/>
+            <path d="M284 202 L318 180 L351 202Z" fill="#7E1B1B"/>
+            <path d="M110 285 V150 L200 78 L290 150 V285Z" fill="#F3ECE1"/>
+            <path d="M98 156 L200 70 L302 156 L292 156 L200 80 L108 156Z" fill="#A32626"/>
+            <rect x="250" y="88" width="16" height="38" fill="#7E1B1B"/>
+            <line x1="110" y1="220" x2="290" y2="220" stroke="#D8CCB8"/>
+            <rect x="135" y="172" width="34" height="40" fill="#2A1E1A"/><rect x="231" y="172" width="34" height="40" fill="#2A1E1A"/>
+            <rect x="135" y="232" width="34" height="38" fill="#2A1E1A"/><rect x="231" y="232" width="34" height="38" fill="#2A1E1A"/>
+            <rect x="303" y="228" width="28" height="30" fill="#2A1E1A"/>
+            <rect x="185" y="232" width="30" height="53" fill="#7E1B1B"/>
+            <rect x="126" y="172" width="8" height="40" fill="#A32626"/><rect x="170" y="172" width="8" height="40" fill="#A32626"/>
+            <rect x="222" y="172" width="8" height="40" fill="#A32626"/><rect x="266" y="172" width="8" height="40" fill="#A32626"/>
+          </g>
+
+          <!-- phase 4: storm -->
+          <g class="ph ph4 rain">
+            <line x1="60" y1="40" x2="52" y2="62"/><line x1="110" y1="20" x2="102" y2="42"/><line x1="160" y1="50" x2="152" y2="72"/>
+            <line x1="230" y1="30" x2="222" y2="52"/><line x1="290" y1="56" x2="282" y2="78"/><line x1="340" y1="24" x2="332" y2="46"/>
+            <line x1="80" y1="110" x2="72" y2="132"/><line x1="320" y1="120" x2="312" y2="142"/><line x1="370" y1="90" x2="362" y2="112"/>
+            <line x1="40" y1="170" x2="32" y2="192"/><line x1="365" y1="170" x2="357" y2="192"/><line x1="200" y1="10" x2="192" y2="32"/>
+          </g>
+
+          <!-- phase 5: lights on -->
+          <g class="ph ph5">
+            <rect class="glow" x="135" y="172" width="34" height="40"/><rect class="glow" x="231" y="172" width="34" height="40"/>
+            <rect class="glow" x="135" y="232" width="34" height="38"/><rect class="glow" x="231" y="232" width="34" height="38"/>
+            <rect class="glow" x="303" y="228" width="28" height="30"/>
+            <line x1="152" y1="172" x2="152" y2="212" stroke="#2A1E1A"/><line x1="248" y1="172" x2="248" y2="212" stroke="#2A1E1A"/>
+            <circle cx="209" cy="260" r="2" fill="#F2C27B"/>
+          </g>
+        </svg>
+        <div class="plate"><span>Architect <b>The Lord</b></span><span id="phase-label">Phase 01 / 05</span></div>
+      </div>
+
+      <ol class="steps">
+        <li class="step on" data-phase="1">
+          <span class="num">Phase 01 · The Ground</span>
+          <h3>It all came down.</h3>
+          <p>What fell apart <strong>is where God starts.</strong></p>
+        </li>
+        <li class="step" data-phase="2">
+          <span class="num">Phase 02 · The Frame</span>
+          <h3>Bones before beauty.</h3>
+          <p>Discipline. Habits. <strong>Showing up daily.</strong></p>
+        </li>
+        <li class="step" data-phase="3">
+          <span class="num">Phase 03 · The Walls</span>
+          <h3>It starts to look like something.</h3>
+          <p>Others see it now. <strong>You saw it first.</strong></p>
+        </li>
+        <li class="step" data-phase="4">
+          <span class="num">Phase 04 · The Storm</span>
+          <h3>Then the rain came.</h3>
+          <p>Some houses collapse from storms. <strong>Others, because the foundation was never built to carry the weight.</strong></p>
+        </li>
+        <li class="step" data-phase="5">
+          <span class="num">Phase 05 · Home</span>
+          <h3>Lights on.</h3>
+          <p>Built faithfully. <strong>Built to last.</strong></p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 02 READERS -->
+<section id="readers">
+  <div class="wrap">
+    <div class="room-h">
+      <div class="num">03 — Readers</div>
+      <h2>Notes on <em>the walls.</em></h2>
+    </div>
+    <div class="readers">
+      <div class="quotes">
+        <div class="quote">
+          <div><div class="stars" aria-label="5 stars">★★★★★</div>
+          <blockquote>“Awesome book! Very relatable to everyone. Profound analogies! A keepsake to read, apply, re-read &amp; abide by. <em>Let the Master Builder build you His divinely refining way.</em>”</blockquote></div>
+          <div class="who"><img src="fb-assets/av-ltanya.webp" alt="" width="46" height="46"><div><b>L'Tanya Billups</b><span>Reader</span></div></div>
+        </div>
+        <div class="quote">
+          <div><div class="stars" aria-label="5 stars">★★★★★</div>
+          <blockquote>“I need one, bro.”</blockquote></div>
+          <div class="who"><img src="fb-assets/av-reader.webp" alt="" width="46" height="46"><div><b>Reader</b><span>Facebook</span></div></div>
+        </div>
+      </div>
+      <figure class="photos-cell"><img src="fb-assets/reader-1.webp" alt="A reader smiling and holding Faithfully Built outdoors" width="800" height="1000" loading="lazy"><figcaption>Faithfully Built reader</figcaption></figure>
+      <figure class="photos-cell"><img src="fb-assets/reader-2.webp" alt="A reader smiling and holding Faithfully Built in a parking garage" width="800" height="1000" loading="lazy"><figcaption>Faithfully Built reader</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 03 THE BOOK -->
+<section id="book">
+  <div class="wrap book">
+    <div class="book-cover"><img src="fb-assets/cover.webp" alt="Faithfully Built by Isaiah Lee" width="720" height="1073" loading="lazy"></div>
+    <div>
+      <div class="num">04 — The Book</div>
+      <h2>You are not abandoned. <em>You are under construction.</em></h2>
+      <p class="themes">Demolition · Surrender · Patience · Mind renewal · Identity · Restoration</p>
+      <!-- Replace each href with its checkout link -->
+      <div class="eds">
+        <a href="https://buy.stripe.com/6oU7sLf4j5Dg7vd6Qie3e02"><span class="m hot">Limited</span><span class="t">Signed Paperback</span><span class="go">Order →</span></a>
+        <a href="https://buy.stripe.com/8x200jg8n3v84j1eiKe3e01"><span class="m">Ships to you</span><span class="t">Paperback</span><span class="go">Order →</span></a>
+      </div>
+      <div class="ctas">
+        <a class="pill solid" href="https://buy.stripe.com/8x200jg8n3v84j1eiKe3e01">Order Now <span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- 04 THE KEYS -->
+<section class="keys" id="keys">
+  <svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="11" cy="17" r="7" fill="none" stroke="#F3ECE1" stroke-width="1.6"/><path d="M18 17h13M26 17v5M30 17v4" stroke="#F3ECE1" stroke-width="1.6" fill="none"/></svg>
+  <div class="num">05 — The Keys</div>
+  <h2>Come inside.</h2>
+  <p>Chapter One is free.</p>
+  <a class="pill" href="/free">Give me the keys <span>→</span></a>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="mark" href="#top">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3l9 8v10H3z" fill="none" stroke="#A32626" stroke-width="1.6"/><rect x="10" y="14" width="4" height="7" fill="#A32626"/></svg>
+      Faithfully Built
+    </a>
+    <p class="verse">“Except the Lord build the house, they labour in vain that build it.”</p>
+    <span class="small">© 2026 Isaiah Lee</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var house=document.getElementById('house');
+  var stage=document.querySelector('.stage');
+  var label=document.getElementById('phase-label');
+  var steps=[].slice.call(document.querySelectorAll('.step'));
+  var current=null, ticking=false;
+  function set(n){
+    if(n===current)return; current=n;
+    house.setAttribute('data-phase',n);
+    label.textContent='Phase 0'+n+' / 05';
+    steps.forEach(function(s){s.classList.toggle('on',s.getAttribute('data-phase')===n);});
+  }
+  function update(){
+    ticking=false;
+    var r=stage.getBoundingClientRect();
+    // the line that sits level with the middle of the house drawing is the active phase
+    var target = window.innerWidth<=900 ? (r.bottom+window.innerHeight)/2 : r.top+r.height/2;
+    var best=steps[0], bd=Infinity;
+    steps.forEach(function(s){
+      var h=s.querySelector('h3').getBoundingClientRect();
+      var d=Math.abs(h.top+h.height/2-target);
+      if(d<bd){bd=d;best=s;}
+    });
+    set(best.getAttribute('data-phase'));
+  }
+  function onScroll(){ if(!ticking){ticking=true;requestAnimationFrame(update);} }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  update();
+})();
+</script>
+</body>
+</html>
